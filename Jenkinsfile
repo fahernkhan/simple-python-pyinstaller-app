@@ -30,7 +30,7 @@ pipeline {
 
         stage('Manual Approval') {
             options{
-                timeout(time: 1, unit: 'Minutes')
+                timeout(time: 1, unit: 'MINUTES')
             }
             
             steps {
