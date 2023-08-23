@@ -27,6 +27,17 @@ pipeline {
                 }
             }
         }
+
+        stage('Manual Approval') {
+            option{
+                timeout(time: 1, unit: 'Minutes')
+            }
+            
+            steps {
+                input "Please approve to proceed with deployment"
+            }
+        }
+
         stage('Deploy') {
             agent any
             environment {
